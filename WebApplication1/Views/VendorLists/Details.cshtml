@@ -1,0 +1,50 @@
+﻿@model WebApplication1.Models.VendorList
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VendorList</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewsPaper)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewsPaper)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewspaperID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewspaperID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VendorID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

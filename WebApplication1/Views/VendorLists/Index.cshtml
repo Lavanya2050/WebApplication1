@@ -1,0 +1,72 @@
+﻿@model IEnumerable<WebApplication1.Models.VendorList>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    body {
+        background-image: url('https://i.pinimg.com/564x/5d/88/04/5d8804fa942192f4bd9bd8b5574463ea.jpg');
+        background-size: 250px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+
+<br />
+
+<li> @Html.ActionLink("Create New Vendor", "Create")</li>
+<br />
+
+<li>@Html.ActionLink("Generate Vendor Bill", "Index", "Bills")</li>
+<br />
+
+<Li>@Html.ActionLink("View Vendor Registration", "Regven", "NewVen")</Li><br />
+<Li>@Html.ActionLink("Add NewPaper", "Create", "Subscriptions")</Li>
+<br />
+<br />
+<div style="text-align:center">
+    <h2>Vendor List</h2>
+</div>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewsPaper)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewspaperID)
+        </th>
+        <th> </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsPaper)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewspaperID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.VendorID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.VendorID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.VendorID })
+            </td>
+        </tr>
+
+
+    }
+</table>

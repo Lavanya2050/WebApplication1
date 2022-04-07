@@ -1,0 +1,23 @@
+﻿@model IEnumerable<WebApplication1.Models.Vreg>
+
+@{
+    ViewBag.Title = "Regven";
+}
+
+<h2>New Vendor List</h2>
+
+@{ WebGrid wbgrid = new WebGrid(source: Model);
+
+}
+
+@wbgrid.GetHtml(tableStyle: "table",
+    htmlAttributes: new { @id = "wbgrid" },
+    columns: wbgrid.Columns(
+        wbgrid.Column("UesID", "UseID"),
+        wbgrid.Column("VendorName", "VendorName"),
+        wbgrid.Column("Newspaper", "Newspaper"),
+        wbgrid.Column("Cost_Per_Month", "Cost_Per_Month")
+        ))
+    
+    
+        

@@ -1,0 +1,66 @@
+﻿@model WebApplication1.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CusterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CusterName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Newspaper)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Newspaper)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

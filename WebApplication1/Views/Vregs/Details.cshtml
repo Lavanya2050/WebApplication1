@@ -1,0 +1,50 @@
+﻿@model WebApplication1.Models.Vreg
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vreg</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UesID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UesID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VendorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VendorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Newspaper)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Newspaper)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost_Per_Month)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost_Per_Month)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VendorID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

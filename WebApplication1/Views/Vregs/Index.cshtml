@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WebApplication1.Models.Vreg>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>New Vendor List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+
+</p>
+<li> @Html.ActionLink("Add Delivery Boy", "Index", "DBoys")</li><br />
+<Li>@Html.ActionLink("View Customer List", "Index", "Customers")</Li>
+<br />
+<Li>@Html.ActionLink("View Bill", "Index", "Bills")</li>
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UesID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VendorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Newspaper)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost_Per_Month)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UesID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Newspaper)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost_Per_Month)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.VendorID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.VendorID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.VendorID })
+            </td>
+        </tr>
+    }
+
+</table>

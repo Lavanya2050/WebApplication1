@@ -1,0 +1,36 @@
+﻿@model IEnumerable<WebApplication1.Models.Subscription>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>NewsPaper List</h2>
+
+<p>
+    @Html.ActionLink("Add Newspaper", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+    @Html.DisplayNameFor(model => model.Newspaper)
+</th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost_Per_Month)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost_Per_Month)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Newspaper }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Newspaper }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Newspaper })
+        </td>
+    </tr>
+}
+
+</table>
